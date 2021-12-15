@@ -12,7 +12,7 @@
             function requisitarPagina(url){
 
                 document.getElementById('conteudo').innerHTML = ''
-                
+
                 //incluir o gif de loading na página
                 if(!document.getElementById('loading')){
                     let imgLoading = document.createElement('img')
@@ -33,12 +33,12 @@
             
                 ajax.onreadystatechange = () => {
                     if(ajax.readyState == 4 && ajax.status == 200){
-                        document.getElementById('conteudo').innerHTML = 'Requisição finalizada com sucesso, o status é 200'
+                        document.getElementById('conteudo').innerHTML = ajax.responseText
                     }
 
                     if(ajax.readyState == 4 && ajax.status == 404){
                         
-                        document.getElementById('conteudo').innerHTML = 'Requisição finalizada com sucesso, porém o recurso solicitado não foi encontrado, o status é 404'
+                        document.getElementById('conteudo').innerHTML = 'Tente novamente mais tarde :s'
                     }
                 }
 
